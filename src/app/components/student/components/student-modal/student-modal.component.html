@@ -1,0 +1,72 @@
+<form [formGroup]="formGroup">
+  <div class="grid grid-cols-2 gap-4 m-5">
+    <h1>Student</h1>
+      <!-- Name field -->
+      <mat-form-field class="col-span-2">
+        <mat-label>Name</mat-label>
+        <input matInput matNativeControl
+               [formControlName]="'name'">
+      </mat-form-field>
+      <!-- SSN field -->
+      <mat-form-field>
+        <mat-label>SSN</mat-label>
+        <input matInput matNativeControl
+               [formControlName]="'ssn'">
+      </mat-form-field>
+      <!-- Birthday field -->
+      <mat-form-field >
+        <mat-label>BirthDate</mat-label>
+        <input matInput matNativeControl
+               placeholder="DD/MM/YYYY"
+               [matDatepicker]="picker"
+               [formControlName]="'birthday'">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <!-- Phone field -->
+      <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput matNativeControl
+               [formControlName]="'phone'">
+      </mat-form-field>
+      <!-- Address field -->
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput matNativeControl
+               [formControlName]="'address'">
+      </mat-form-field>
+      <!-- Email field -->
+      <mat-form-field class="col-span-2">
+        <mat-label>Email</mat-label>
+        <input matInput matNativeControl
+               [formControlName]="'email'">
+      </mat-form-field>
+      <!-- Gender field -->
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select matNativeControl
+                    [formControlName]="'gender'">
+          <mat-option value="">Select</mat-option>
+          <mat-option *ngFor="let gender of genders" [value]="gender">
+            {{gender.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!-- Degree field -->
+      <mat-form-field>
+        <mat-select matNativeControl
+                    [formControlName]="'degree'">
+          <mat-option value="">Select</mat-option>
+          <mat-option *ngFor="let degree of degrees" [value]="degree">
+            {{degree.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+  </div>
+  <div class="flex items-center justify-center sm:justify-end px-6 py-4 space-x-3">
+    <button mat-flat-button
+            [color]="'primary'"
+            [disabled]="formGroup.invalid"
+            (click)="save()">
+        <span class="ml-2 mr-1" *ngIf="!formGroup.disabled">Save</span>
+    </button>
+  </div>
+</form>

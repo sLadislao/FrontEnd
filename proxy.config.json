@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://ee:7110",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

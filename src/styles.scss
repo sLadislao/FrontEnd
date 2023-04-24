@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Appearance fill */
+.alert-type-fill-info {
+  @apply bg-gray-600;
+}
+.alert-type-fill-success {
+  @apply bg-green-600;
+}
+.alert-type-fill-error {
+  @apply bg-red-600;
+}
+.alert-type-fill-info, .alert-type-fill-success, .alert-type-fill-error {
+  @apply text-white;
+  .mat-button-wrapper {
+    @apply text-white;
+  }
+}
+
+/* Appearance outline */
+.alert-type-outline-info {
+  @apply bg-gray-50 ring-1 ring-gray-400 ring-inset;
+  @apply text-gray-700;
+}
+.alert-type-outline-success {
+  @apply bg-gray-50 ring-1 ring-green-400 ring-inset;
+  @apply text-green-700;
+}
+.alert-type-outline-error {
+  @apply bg-gray-50 ring-1 ring-red-400 ring-inset;
+  @apply text-red-700;
+}
+.alert-type-outline-info, .alert-type-outline-success, .alert-type-outline-error {
+  @apply text-white;
+  .mat-button-wrapper {
+    @apply text-white;
+  }
+}
+
+
+//.mat-mdc-snack-bar-container {
+//  &.blue-snackbar {
+//    --mdc-snackbar-container-color: #2196f3;
+//    --mat-mdc-snack-bar-button-color: #fff;
+//    --mdc-snackbar-supporting-text-color: #fff;
+//  }
+//}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
